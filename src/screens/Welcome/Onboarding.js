@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { Alert } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const Onboarding = () => {
   const [currentStep, setCurrentStep] = useState(0);
-
+  const navigation = useNavigation();
   const onboardingSteps = [
     {
       title: "Pour Over",
@@ -28,7 +29,8 @@ const Onboarding = () => {
   ];
   const handleGetStarted = () => {
     if (currentStep === onboardingSteps.length - 1) {
-      Alert.alert("Welcome to the club!");
+      // Alert.alert("Welcome to the club!");
+      navigation.navigate("Home");
     }
   };
   const handleNext = () => {
