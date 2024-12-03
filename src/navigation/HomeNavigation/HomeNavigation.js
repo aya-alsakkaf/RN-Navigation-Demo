@@ -7,9 +7,9 @@ import Home from "../../screens/Home/Home";
 import BrewDetails from "../../screens/Home/BrewDetails";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
+const Stack = createNativeStackNavigator();
 const HomeNavigation = () => {
   const navigation = useNavigation();
-  const Stack = createNativeStackNavigator();
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -17,11 +17,11 @@ const HomeNavigation = () => {
         component={Onboarding}
         options={{
           headerShadowVisible: false,
-          headerRight: () => (
-            <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-              <Text>Skip</Text>
-            </TouchableOpacity>
-          ),
+          // headerRight: () => (
+          //   <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+          //     <Text>Skip</Text>
+          //   </TouchableOpacity>
+          // ),
         }}
       />
       <Stack.Screen
@@ -40,18 +40,18 @@ const HomeNavigation = () => {
         component={BrewDetails}
         options={{
           headerShadowVisible: false,
-          headerLeft: () => (
-            <TouchableOpacity
-              onPress={() => navigation.goBack()}
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                gap: 5,
-              }}
-            >
-              <Ionicons name="arrow-back" size={24} color="#4A3428" />
-            </TouchableOpacity>
-          ),
+          // headerLeft: () => (
+          //   <TouchableOpacity
+          //     onPress={() => navigation.goBack()}
+          //     style={{
+          //       flexDirection: "row",
+          //       alignItems: "center",
+          //       gap: 5,
+          //     }}
+          //   >
+          //     <Ionicons name="arrow-back" size={24} color="#4A3428" />
+          //   </TouchableOpacity>
+          // ),
           headerTitleStyle: {
             color: "#4A3428",
           },

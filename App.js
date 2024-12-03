@@ -7,19 +7,13 @@ import Register from "./src/screens/Auth/Register";
 import Onboarding from "./src/screens/Welcome/Onboarding";
 import { NavigationContainer } from "@react-navigation/native";
 import HomeNavigation from "./src/navigation/HomeNavigation/HomeNavigation";
+import AuthNavigation from "./src/navigation/AuthNavigation/AuthNavigation";
+import MainNavigation from "./src/navigation/MainNavigation/MainNavigation";
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <NavigationContainer>
-        <SafeAreaView style={styles.container}>
-          <HomeNavigation />
-          {/* <Home /> */}
-          {/* <BrewDetails /> */}
-          {/* <Login /> */}
-          {/* <Register /> */}
-        </SafeAreaView>
-      </NavigationContainer>
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <MainNavigation />
+    </NavigationContainer>
   );
 }
 
