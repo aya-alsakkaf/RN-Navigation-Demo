@@ -14,6 +14,7 @@ const MainNavigation = () => {
         tabBarActiveTintColor: "#4A3428",
         tabBarInactiveTintColor: "grey",
       }}
+      backBehavior="history"
     >
       <Tab.Screen
         name="Main"

@@ -40,18 +40,22 @@ const HomeNavigation = () => {
         component={BrewDetails}
         options={{
           headerShadowVisible: false,
-          // headerLeft: () => (
-          //   <TouchableOpacity
-          //     onPress={() => navigation.goBack()}
-          //     style={{
-          //       flexDirection: "row",
-          //       alignItems: "center",
-          //       gap: 5,
-          //     }}
-          //   >
-          //     <Ionicons name="arrow-back" size={24} color="#4A3428" />
-          //   </TouchableOpacity>
-          // ),
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("Main", {
+                  screen: "Home",
+                })
+              }
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                gap: 5,
+              }}
+            >
+              <Ionicons name="arrow-back" size={24} color="#4A3428" />
+            </TouchableOpacity>
+          ),
           headerTitleStyle: {
             color: "#4A3428",
           },
