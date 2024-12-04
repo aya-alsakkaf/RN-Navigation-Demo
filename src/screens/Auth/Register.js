@@ -7,10 +7,12 @@ import {
   Platform,
 } from "react-native";
 import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigation = useNavigation();
 
   const handleRegister = () => {
     console.log("Login attempted with:", email, password);
@@ -124,7 +126,7 @@ const Register = () => {
         }}
       >
         <Text style={{ color: "#6F4E37" }}>Already have an account? </Text>
-        <TouchableOpacity onPress={{}}>
+        <TouchableOpacity onPress={() => navigation.navigate("Login")}>
           <Text
             style={{
               color: "#4A3428", // Dark coffee brown

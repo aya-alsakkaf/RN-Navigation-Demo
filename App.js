@@ -5,17 +5,15 @@ import BrewDetails from "./src/screens/Home/BrewDetails";
 import Login from "./src/screens/Auth/Login";
 import Register from "./src/screens/Auth/Register";
 import Onboarding from "./src/screens/Welcome/Onboarding";
+import { NavigationContainer } from "@react-navigation/native";
+import HomeNavigation from "./src/navigation/HomeNavigation/HomeNavigation";
+import AuthNavigation from "./src/navigation/AuthNavigation/AuthNavigation";
+import MainNavigation from "./src/navigation/MainNavigation/MainNavigation";
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
-        <Onboarding />
-        {/* <Home /> */}
-        {/* <BrewDetails /> */}
-        {/* <Login /> */}
-        {/* <Register /> */}
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <MainNavigation />
+    </NavigationContainer>
   );
 }
 
