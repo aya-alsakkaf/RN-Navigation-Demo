@@ -7,7 +7,11 @@ import BrewDetails from "../../screens/Home/BrewDetails";
 const Stack = createNativeStackNavigator();
 const HomeNavigation = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShadowVisible: false,
+      }}
+    >
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Brew Details" component={BrewDetails} />
     </Stack.Navigator>
