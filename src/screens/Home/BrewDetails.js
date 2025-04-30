@@ -11,8 +11,17 @@ import { brewMethods } from "../../data/brewMethods";
 import BrewData from "../../components/BrewData";
 import BrewInstructions from "../../components/BrewInstructions";
 
-const BrewDetails = () => {
-  const brewMethod = brewMethods.find((item) => item.id === 2);
+const BrewDetails = ({ route }) => {
+  console.log(route.params);
+  // const { brewID } = route.params; //object deconstruction
+  // const brewID = route.params.brewID;
+  // const name = route.params.name;
+
+  const { brewID, name } = route.params;
+
+  console.log(`ID is ${brewID}, and the name is ${name}`);
+
+  const brewMethod = brewMethods.find((item) => item.id === brewID);
   return (
     <ScrollView
       style={{
