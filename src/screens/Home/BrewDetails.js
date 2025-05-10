@@ -11,8 +11,9 @@ import { brewMethods } from "../../data/brewMethods";
 import BrewData from "../../components/BrewData";
 import BrewInstructions from "../../components/BrewInstructions";
 
-const BrewDetails = () => {
-  const brewMethod = brewMethods.find((item) => item.id === 2);
+const BrewDetails = ({ route }) => {
+  const { brewMethod } = route.params;
+  const brewMethodData = brewMethods.find((item) => item.id === brewMethod);
   return (
     <ScrollView
       style={{
@@ -33,7 +34,7 @@ const BrewDetails = () => {
         }}
       >
         <Image
-          source={brewMethod.image}
+          source={brewMethodData.image}
           style={{
             width: "100%",
             height: 200,
@@ -52,7 +53,7 @@ const BrewDetails = () => {
             fontFamily: Platform.OS === "ios" ? "Georgia" : "serif",
           }}
         >
-          {brewMethod.name}
+          {brewMethodData.name}
         </Text>
         <Text
           style={{
@@ -62,18 +63,18 @@ const BrewDetails = () => {
             lineHeight: 24,
           }}
         >
-          {brewMethod.description}
+          {brewMethodData.description}
         </Text>
       </View>
 
       <BrewData
-        coffee={brewMethod.coffee}
-        water={brewMethod.water}
-        grinder={brewMethod.grinder}
-        brewTime={brewMethod.brewTime}
+        coffee={brewMethodData.coffee}
+        water={brewMethodData.water}
+        grinder={brewMethodData.grinder}
+        brewTime={brewMethodData.brewTime}
       />
 
-      <BrewInstructions instructions={brewMethod.instructions} />
+      <BrewInstructions instructions={brewMethodData.instructions} />
     </ScrollView>
   );
 };
